@@ -1,0 +1,61 @@
+<html>
+	<head>
+		<style>
+			#userCanvas {
+				position: fixed;
+				top: 0px;
+				left: 0px;		
+			}
+			
+			#fileButton {
+				position: fixed;
+				top: 720px;
+				left: 1350px;
+			}
+			#fileMenu {
+				position: fixed;
+				text-align: center;
+				width: 200px;
+			}
+			
+			.sideColor {
+				width: 80px;
+				height: 80px;
+				padding-bottom: 6px;
+			}
+
+			.sideIcons {
+				width: 80px;
+				height: 80px;
+				padding-bottom: 6px;
+			}
+			
+			#list {
+				list-style-type: none;
+				position: fixed;
+				left: -30px;
+				top: 0px;
+			}
+		</style>
+	</head>
+	<body onload="init()">
+		<canvas id="userCanvas"></canvas>
+		<div id="fileMenu"></div>
+		<input type="file" value="upload" id="fileButton"/>
+		
+		<ul id="list">
+			<li><img onclick="icon(1)" class="sideIcons" id="plus" src="sideBar/plus.svg"></img></li>
+			<li><img onclick="icon(2)" class="sideIcons" id="minus" src="sideBar/minus.svg"></img></li>
+			<li><img onclick="icon(3)" class="sideColor" id="red" src="sideBar/red.svg"></img></li>
+			<li><img onclick="icon(4)" class="sideColor" id="black" src="sideBar/black.svg"></img></li>
+			<li><img onclick="icon(5)" class="sideColor" id="green" src="sideBar/green.svg"></img></li>
+			<li><img onclick="icon(6)" class="sideColor" id="blue" src="sideBar/blue.svg"></img></li>
+			<li><img onclick="icon(7)" class="sideColor" id="purple" src="sideBar/purple.svg"></img></li>
+			<li><img onclick="icon(8)" class="sideIcons" id="trash" src="sideBar/trash.svg"></img></li>
+		</ul>
+		<script type="text/JavaScript" src="jquery-3.2.1.min.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>
+		<script type="text/JavaScript" src="script.js"></script>
+		<script type="text/JavaScript" src="databaseScript.js"></script>
+	</body>
+</html>
