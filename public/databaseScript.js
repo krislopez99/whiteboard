@@ -1,5 +1,4 @@
-var JSONdata, canvasRefreshData,
-JSONpointer;
+var JSONdata, canvasRefreshData, JSONfile;
 var refresh = new Image();
 var database;
 
@@ -64,11 +63,8 @@ fileButton.addEventListener('change', function(event) {
 	});
 });
 
-var checkPointer = firebase.database().ref(courseID);
-checkPointer.orderByChild("timeStamp").on('child_added', function(snapshot) {
-	JSONpointer = snapshot.val();
-	console.log(snapshot.val());
+var checkFile = firebase.database().ref(courseID);
+checkFile.orderByChild("timeStamp").on('child_added', function(snapshot) {
+	JSONfile = snapshot.val();
 	$("#fileMenu").append("<a target='_blank' href='" + snapshot.val().imageLoc + "'>" + snapshot.val().name + "</a><br>");
-	pointer = JSONpointer;
-	console.log(pointer);
 });
